@@ -30,6 +30,8 @@ public class Bill {
     private String name;
     @Column(name = "value")
     private BigDecimal value;
+    @Column(name = "updated_value")
+    private BigDecimal updatedValue;
     @Column(name = "due_date")
     private LocalDate dueDate;
     @Column(name = "payday")
@@ -44,10 +46,12 @@ public class Bill {
         // Do nothing.
     }
 
-    public Bill(Long id, String name, BigDecimal value, LocalDate dueDate, LocalDate payday, Long lateDays, Fine fine) {
+    public Bill(Long id, String name, BigDecimal value, BigDecimal updatedValue, LocalDate dueDate, LocalDate payday,
+            Long lateDays, Fine fine) {
         this.id = id;
         this.name = name;
         this.value = value;
+        this.updatedValue = updatedValue;
         this.dueDate = dueDate;
         this.payday = payday;
         this.lateDays = lateDays;
@@ -76,6 +80,14 @@ public class Bill {
 
     public void setValue(BigDecimal value) {
         this.value = value;
+    }
+
+    public BigDecimal getUpdatedValue() {
+        return updatedValue;
+    }
+
+    public void setUpdatedValue(BigDecimal updatedValue) {
+        this.updatedValue = updatedValue;
     }
 
     public LocalDate getDueDate() {
@@ -112,7 +124,7 @@ public class Bill {
 
     @Override
     public int hashCode() {
-        return Objects.hash(dueDate, fine, id, lateDays, name, payday, value);
+        return Objects.hash(dueDate, fine, id, lateDays, name, payday, updatedValue, value);
     }
 
     @Override
@@ -127,7 +139,7 @@ public class Bill {
         return Objects.equals(dueDate, other.dueDate) && Objects.equals(fine, other.fine)
                 && Objects.equals(id, other.id) && Objects.equals(lateDays, other.lateDays)
                 && Objects.equals(name, other.name) && Objects.equals(payday, other.payday)
-                && Objects.equals(value, other.value);
+                && Objects.equals(updatedValue, other.updatedValue) && Objects.equals(value, other.value);
     }
 
     @Override
@@ -139,6 +151,8 @@ public class Bill {
         builder.append(name);
         builder.append(", value=");
         builder.append(value);
+        builder.append(", updatedValue=");
+        builder.append(updatedValue);
         builder.append(", dueDate=");
         builder.append(dueDate);
         builder.append(", payday=");
