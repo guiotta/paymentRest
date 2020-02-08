@@ -47,8 +47,8 @@ DROP TABLE IF EXISTS `rule`;
         
 CREATE TABLE `rule` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
-  `initial_day` INTEGER NULL,
-  `final_day` INTEGER NULL,
+  `initial_day` BIGINT NULL,
+  `final_day` BIGINT NULL,
   PRIMARY KEY (`id`)
 );
 

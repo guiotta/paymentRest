@@ -3,8 +3,8 @@
 -- ---
 
 -- INSERT INTO `rule` (`id`,`initial_day`,`final_day`) VALUES ('','','');
-INSERT INTO `rule` (`id`, `initial_day`, `final_day`) VALUES(1, 1, 3);
-INSERT INTO `rule` (`id`, `initial_day`, `final_day`) VALUES(2, 4, 5);
+INSERT INTO `rule` (`id`, `initial_day`, `final_day`) VALUES(1, 1, 2);
+INSERT INTO `rule` (`id`, `initial_day`, `final_day`) VALUES(2, 3, 4);
 INSERT INTO `rule` (`id`, `initial_day`, `final_day`) VALUES(3, 5, 2147483647);
 -- INSERT INTO `fine` (`id`,`percentage`,`interest`,`id_rule`) VALUES('','','','');
 INSERT INTO `fine` (`id`,`percentage`,`interest`,`id_rule`) VALUES(1, 2, 0.1, 1);
