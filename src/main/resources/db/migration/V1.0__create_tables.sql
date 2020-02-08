@@ -13,13 +13,13 @@
 DROP TABLE IF EXISTS `bill`;
         
 CREATE TABLE `bill` (
-  `id` INTEGER NOT NULL AUTO_INCREMENT,
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(64) NOT NULL,
-  `value` DECIMAL NOT NULL,
+  `value` DECIMAL(11,2) NOT NULL,
   `due_date` DATE NOT NULL,
   `payday` DATE NOT NULL,
-  `late_days` INTEGER NOT NULL,
-  `id_fine` INTEGER NOT NULL,
+  `late_days` BIGINT NOT NULL,
+  `id_fine` BIGINT NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -31,10 +31,10 @@ CREATE TABLE `bill` (
 DROP TABLE IF EXISTS `fine`;
         
 CREATE TABLE `fine` (
-  `id` INTEGER NOT NULL AUTO_INCREMENT,
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
   `percentage` INTEGER NOT NULL,
-  `interest` DECIMAL NOT NULL,
-  `id_rule` INTEGER NULL DEFAULT NULL,
+  `interest` DECIMAL(11,1) NOT NULL,
+  `id_rule` BIGINT NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -46,7 +46,7 @@ CREATE TABLE `fine` (
 DROP TABLE IF EXISTS `rule`;
         
 CREATE TABLE `rule` (
-  `id` INTEGER NOT NULL AUTO_INCREMENT,
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
   `initial_day` INTEGER NULL,
   `final_day` INTEGER NULL,
   PRIMARY KEY (`id`)
