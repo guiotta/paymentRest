@@ -16,6 +16,7 @@ CREATE TABLE `bill` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(64) NOT NULL,
   `value` DECIMAL(11,2) NOT NULL,
+  `updated_value` DECIMAL(11,2) NOT NULL,
   `due_date` DATE NOT NULL,
   `payday` DATE NOT NULL,
   `late_days` BIGINT NOT NULL,
@@ -47,8 +48,8 @@ DROP TABLE IF EXISTS `rule`;
         
 CREATE TABLE `rule` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
-  `initial_day` INTEGER NULL,
-  `final_day` INTEGER NULL,
+  `initial_day` BIGINT NULL,
+  `final_day` BIGINT NULL,
   PRIMARY KEY (`id`)
 );
 

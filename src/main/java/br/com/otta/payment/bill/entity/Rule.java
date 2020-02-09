@@ -23,15 +23,15 @@ public class Rule {
     @Column(name = "id")
     private Long id;
     @Column(name = "initial_day")
-    private Integer initialDay;
+    private Long initialDay;
     @Column(name = "final_day")
-    private Integer finalDay;
+    private Long finalDay;
 
     public Rule() {
         // Do nothing.
     }
 
-    public Rule(Long id, Integer initialDay, Integer finalDay) {
+    public Rule(Long id, Long initialDay, Long finalDay) {
         this.id = id;
         this.initialDay = initialDay;
         this.finalDay = finalDay;
@@ -45,19 +45,19 @@ public class Rule {
         this.id = id;
     }
 
-    public Integer getInitialDay() {
+    public Long getInitialDay() {
         return initialDay;
     }
 
-    public void setInitialDay(Integer initialDay) {
+    public void setInitialDay(Long initialDay) {
         this.initialDay = initialDay;
     }
 
-    public Integer getFinalDay() {
+    public Long getFinalDay() {
         return finalDay;
     }
 
-    public void setFinalDay(Integer finalDay) {
+    public void setFinalDay(Long finalDay) {
         this.finalDay = finalDay;
     }
 
