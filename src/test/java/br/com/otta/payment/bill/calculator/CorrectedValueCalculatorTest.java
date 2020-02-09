@@ -61,7 +61,7 @@ public class CorrectedValueCalculatorTest {
     @Test
     public void shouldReturnOriginalValueIfNotFoundAnyCalculator() {
         // given
-        correctedValueCalculator = new CorrectedValueCalculator(Lists.newArrayList());
+        correctedValueCalculator = new CorrectedValueCalculator(Lists.emptyList());
 
         BigDecimal expectedValue = BigDecimal.valueOf(100l);
         given(model.getOriginalValue()).willReturn(ORIGINAL_VALUE);
